@@ -1,27 +1,27 @@
 .home {
-  padding-top: 32px;
+  padding-top: 44.8px;
 }
 
 body {
-  font-size: 8px; /* reduced baseline */
+  font-size: 11.2px; /* default */
 }
 
-@media (min-width: 800px) {
-  body {
-    font-size: 12px; /* modest bump */
-  }
+@media (min-width: 1024px) {
+body {
+  font-size: 12.6px; 
+}
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1024px) {
   .section {
-    padding: 2rem 1rem; /* reduced padding */
+    padding: 5.6rem 2.8rem; 
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1024px) {
   .hero-photo {
-    width: 150px;
-    height: 150px;
+    width: 280px;
+    height: 280px;
   }
 }
 
@@ -31,23 +31,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2.5rem 1rem;
+  padding: 3.5rem 1.4rem;
   position: relative;
 }
 
+/* ONE shared inner container — used by every section */
 .section-inner {
   width: 100%;
-  max-width: 700px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2.8rem;
 }
 
 /* ── Section Titles ── */
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(1rem, 2.5vw, 2.25rem);
+  font-size: clamp(1.4rem, 3.5vw, 3.15rem);
   color: var(--burgundy);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.1rem;
   position: relative;
   display: inline-block;
 }
@@ -55,11 +56,11 @@ body {
 .section-title::after {
   content: '';
   display: block;
-  margin-top: 0.2rem;
-  height: 2px;
-  width: 30%;
+  margin-top: 0.28rem;
+  height: 2.8px;
+  width: 60%;
   background: var(--rose);
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
 .section-title--light {
@@ -76,17 +77,18 @@ body {
 .section--hero {
   background: var(--cream);
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.4rem;
 }
 
+/* hero-inner is just a flex row — sizing comes from section + section-inner */
 .hero-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 2.8rem;
   width: 100%;
-  max-width: 700px;
-  padding: 0 2rem;
+  max-width: 980px;
+  padding: 0 2.8rem;     /* matches section-inner so hero aligns with other sections */
 }
 
 .hero-text {
@@ -95,182 +97,378 @@ body {
 
 .hero-greeting {
   font-family: var(--font-body);
-  font-size: 0.55rem;
+  font-size: 0.77rem;
   font-weight: 500;
-  letter-spacing: 1.5px;
+  letter-spacing: 2.1px;
   text-transform: uppercase;
   color: var(--crimson);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 
 .hero-name {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3vw, 2.5rem);
+  font-size: clamp(1.96rem, 4.2vw, 3.5rem);
   color: var(--burgundy);
   line-height: 1.05;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.525rem;
 }
 
 .hero-tagline {
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 1px;
+  letter-spacing: 1.4px;
   color: var(--forest);
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.05rem;
 }
 
 .hero-bio {
-  font-size: 0.55rem;
-  line-height: 1.4;
+  font-size: 0.735rem;
+  line-height: 1.8;
   color: #4a3a3a;
-  max-width: 290px;
+  max-width: 406px;
+}
+
+/* Photo */
+.hero-photo-wrap {
+  position: relative;
+  flex-shrink: 0;
 }
 
 .hero-photo {
-  width: 150px;
-  height: 150px;
+  width: 210px;
+  height: 210px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--cream);
-  box-shadow: 0 4px 20px rgba(98,6,7,0.2);
+  position: relative;
+  z-index: 1;
+  border: 3.5px solid var(--cream);
+  box-shadow: 0 5.6px 28px rgba(98,6,7,0.2);
 }
 
 .hero-photo-ring {
   position: absolute;
-  inset: -6px;
+  inset: -8.4px;
   border-radius: 50%;
-  border: 1.5px solid var(--rose);
+  border: 2.1px solid var(--rose);
   opacity: 0.6;
 }
 
+/* Scroll hint */
 .scroll-hint {
-  font-size: 0.4rem;
-  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.28rem;
+  font-size: 0.525rem;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--forest);
+  opacity: 0.5;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(4.2px); }
 }
 
 /* ══════════════════════════════
    2. INTERESTS
 ══════════════════════════════ */
+.section--research {
+  background: var(--forest);
+}
+
+.section--research .section-title {
+  color: var(--cream);
+}
+
 .research-grid {
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(182px, 1fr));
+  gap: 1.05rem;
 }
 
 .research-card {
-  border-radius: 8px;
-  padding: 1rem 0.9rem;
+  background: rgba(245, 249, 229, 0.07);
+  border: 1px solid rgba(245,249,229,0.12);
+  border-radius: 11.2px;
+  padding: 1.4rem 1.225rem;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.research-card:hover {
+  background: rgba(245,249,229,0.12);
+  transform: translateY(-2.8px);
 }
 
 .research-icon {
-  font-size: 1.1rem;
+  font-size: 1.54rem;
+  display: block;
+  margin-bottom: 0.7rem;
 }
 
 .research-card-title {
-  font-size: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  color: var(--cream);
+  margin-bottom: 0.42rem;
 }
 
 .research-card-desc {
-  font-size: 0.45rem;
-  line-height: 1.2;
+  font-size: 0.63rem;
+  line-height: 1.7;
+  color: rgba(245,249,229,0.65);
 }
 
 /* ══════════════════════════════
    3. SKILLS
 ══════════════════════════════ */
+.section--skills {
+  background: var(--cream);
+}
+
+.skills-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 2.1rem;
+  width: 100%;
+}
+
 .skills-group-title {
-  font-size: 0.45rem;
-  letter-spacing: 1.25px;
+  font-family: var(--font-body);
+  font-size: 0.595rem;
+  font-weight: 600;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+  color: var(--crimson);
+  margin-bottom: 0.84rem;
+}
+
+.skills-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.525rem;
 }
 
 .skill-pill {
-  padding: 0.25rem 0.7rem;
-  font-size: 0.5rem;
+  display: inline-block;
+  padding: 0.35rem 0.98rem;
+  border-radius: 100px;
+  font-size: 0.665rem;
+  font-weight: 500;
+  background: transparent;
+  border: 1.4px solid var(--burgundy);
+  color: var(--burgundy);
+  letter-spacing: 0.3px;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  cursor: default;
+}
+
+.skill-pill:hover {
+  background: var(--burgundy);
+  color: var(--cream);
+  transform: translateY(-1.4px);
 }
 
 /* ══════════════════════════════
    4. PERSONAL DETAILS
 ══════════════════════════════ */
+.section--details {
+  background: var(--burgundy);
+}
+
 .details-card {
-  border-radius: 10px;
-  margin-bottom: 1rem;
+  background: rgba(245,249,229,0.06);
+  border: 1px solid rgba(245,249,229,0.1);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.4rem;
 }
 
 .details-row {
-  padding: 0.6rem 1rem;
-  gap: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 0.84rem 1.4rem;
+  border-bottom: 1px solid rgba(245,249,229,0.08);
+  gap: 1.4rem;
+}
+
+.details-row:last-child {
+  border-bottom: none;
 }
 
 .details-label {
-  font-size: 0.4rem;
-  min-width: 80px;
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--rose);
+  min-width: 112px;
 }
 
 .details-value {
-  font-size: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--cream);
+}
+
+.details-link {
+  color: var(--cream);
+  border-bottom: 1px solid rgba(225,145,132,0.4);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.details-link:hover {
+  color: var(--rose);
+  border-color: var(--rose);
+}
+
+/* Social Buttons */
+.social-links {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
 }
 
 .social-btn {
-  padding: 0.35rem 1rem;
-  font-size: 0.45rem;
+  display: inline-block;
+  padding: 0.525rem 1.4rem;
+  border-radius: 100px;
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 1.05px;
+  text-transform: uppercase;
+  background: var(--rose);
+  color: var(--burgundy);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.social-btn:hover {
+  background: var(--crimson);
+  color: var(--cream);
+  transform: translateY(-1.4px);
+}
+
+.social-btn--outline {
+  background: transparent;
+  border: 1.4px solid var(--rose);
+  color: var(--rose);
+}
+
+.social-btn--outline:hover {
+  background: var(--rose);
+  color: var(--burgundy);
 }
 
 /* ══════════════════════════════
    RESPONSIVE
 ══════════════════════════════ */
-@media (max-width: 760px) {
-  .hero-photo {
-    width: 90px;
-    height: 90px;
-  }
-  .section {
-    padding: 1.5rem 0.6rem;
+@media (max-width: 1600px) {
+  .section-inner,
+  .hero-inner {
+    padding: 0 1.4rem;
   }
 }
+
+@media (max-width: 760px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 0 0.875rem;
+  }
+
+  .section-inner {
+    padding: 0 0.875rem;
+  }
+
+  .hero-bio {
+    margin: 0 auto;
+  }
+
+  .hero-photo {
+    width: 126px;
+    height: 126px;
+  }
+
+  .section {
+    padding: 2.1rem 0.875rem;
+  }
+
+  .details-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.175rem;
+    padding: 0.7rem 0.875rem;
+  }
+
+  .details-label {
+    min-width: auto;
+  }
+}
+
 
 /* ══════════════════════════════
    LAPTOP / LARGE SCREENS
 ══════════════════════════════ */
 @media (min-width: 1024px) {
   body {
-    font-size: 12px;
+    font-size: 16.8px; 
   }
 
   .section {
-    padding: 3rem 1.5rem;
+    padding: 5.6rem 2.8rem; 
+  }
+
+  .section-inner,
+  .hero-inner {
+    max-width: 1260px; 
+    padding: 0 4.2rem;   
   }
 
   .hero-name {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(3.15rem, 5.6vw, 4.55rem); 
+  }
+
+  .hero-tagline {
+    font-size: 1.54rem;
+    letter-spacing: 2.1px;
+  }
+
+  .hero-bio {
+    font-size: 1.54rem;
+    max-width: 490px; 
   }
 
   .hero-photo {
-    width: 180px;
-    height: 180px;
+    width: 280px;
+    height: 280px; 
   }
 
   .research-card-title {
-    font-size: 0.8rem;
+    font-size: 1.75rem; 
   }
 
   .research-card-desc {
-    font-size: 0.5rem;
+    font-size: 1.435rem;
   }
 
   .skill-pill {
-    font-size: 0.6rem;
+    font-size: 1.435rem;
+    padding: 0.42rem 1.12rem; 
   }
 
   .details-label {
-    font-size: 0.5rem;
+    font-size: 1.33rem;
   }
 
   .details-value {
-    font-size: 0.6rem;
+    font-size: 1.47rem;
   }
 
   .social-btn {
-    font-size: 0.6rem;
-    padding: 0.5rem 1.2rem;
+    font-size: 1.4rem;
+    padding: 0.7rem 1.75rem; 
   }
 }

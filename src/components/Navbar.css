@@ -7,34 +7,34 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2.5rem;
-  height: 128px;
+  padding: 0 1.25rem; 
+  height: 64px;      
   background: var(--forest);
-  box-shadow: 0 2px 16px rgba(98, 6, 7, 0.15);
+  box-shadow: 0 1px 8px rgba(98, 6, 7, 0.15);
 }
 
 .navbar-logo {
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: 1.25rem; 
   color: var(--cream);
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1rem; 
 }
 
 .nav-item {
   font-family: var(--font-body);
-  font-size: 1.95rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.75px;
   text-transform: uppercase;
   color: rgba(245, 249, 229, 0.75);
-  padding: 0.4rem 0;
-  border-bottom: 2px solid transparent;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid transparent;
   transition: color 0.2s, border-color 0.2s;
 }
 
@@ -51,19 +51,19 @@
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 2.5px; 
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 2px;
 }
 
 .bar {
   display: block;
-  width: 24px;
-  height: 2px;
+  width: 12px;  
+  height: 1px;  
   background: var(--cream);
-  border-radius: 2px;
+  border-radius: 1px;
   transition: transform 0.3s;
 }
 
@@ -73,7 +73,7 @@
 
   .nav-links {
     position: absolute;
-    top: 64px;
+    top: 32px; 
     left: 0;
     right: 0;
     flex-direction: column;
@@ -85,16 +85,16 @@
   }
 
   .nav-links--open {
-    max-height: 200px;
+    max-height: 100px; 
   }
 
   .nav-links li {
-    border-top: 1px solid rgba(245,249,229,0.1);
+    border-top: 0.5px solid rgba(245,249,229,0.1);
   }
 
   .nav-item {
     display: block;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     border-bottom: none;
   }
 
