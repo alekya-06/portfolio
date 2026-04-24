@@ -1,3 +1,14 @@
+:root {
+  --forest:   #475B35;
+  --cream:    #F5F9E5;
+  --rose:     #E19184;
+  --crimson:  #C63E4E;
+  --burgundy: #620607;
+
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

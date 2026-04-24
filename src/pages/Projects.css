@@ -1,0 +1,148 @@
+.projects-page {
+  padding-top: calc(64px + 4rem);
+  padding-bottom: 6rem;
+  min-height: 100svh;
+  background: var(--cream);
+}
+
+/* ── Header ── */
+.projects-header {
+  max-width: 1000px;
+  margin: 0 auto 3.5rem;
+  padding: 0 2rem;
+}
+
+.projects-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--burgundy);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.projects-heading::after {
+  content: '';
+  display: block;
+  margin-top: 0.4rem;
+  height: 10px;
+  width: 50%;
+  background: var(--rose);
+  border-radius: 3px;
+}
+
+.projects-sub {
+  font-size: 3.05rem;
+  line-height: 1.75;
+  color: #5a4040;
+  max-width: 560px;
+}
+
+/* ── Grid ── */
+.projects-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(680px, 1fr));
+  gap: 1.75rem;
+}
+
+/* ── Card ── */
+.project-card {
+  background: #fff;
+  border: 1px solid rgba(71,91,53,0.12);
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--forest), var(--crimson));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-card:hover {
+  box-shadow: 0 12px 40px rgba(98,6,7,0.12);
+  transform: translateY(-4px);
+  border-color: rgba(71,91,53,0.2);
+}
+
+.project-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.project-emoji {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.github-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--forest);
+  background: rgba(71,91,53,0.08);
+  border: 1px solid rgba(71,91,53,0.18);
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.github-badge:hover {
+  background: var(--forest);
+  color: var(--cream);
+  border-color: var(--forest);
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 2.35rem;
+  color: var(--burgundy);
+  line-height: 1.2;
+}
+
+.project-desc {
+  font-size: 1.92rem;
+  line-height: 1.75;
+  color: #5a4040;
+  flex: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .projects-page {
+    padding-top: calc(64px + 2.5rem);
+  }
+
+  .projects-header,
+  .projects-grid {
+    padding: 0 1.25rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

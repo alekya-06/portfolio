@@ -1,0 +1,474 @@
+.home {
+  padding-top: 64px;
+}
+
+body {
+  font-size: 16px; /* default */
+}
+
+@media (min-width: 1024px) {
+body {
+  font-size: 18px; 
+}
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 8rem 4rem; 
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-photo {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* ── Base Section ── */
+.section {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+/* ONE shared inner container — used by every section */
+.section-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+/* ── Section Titles ── */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  color: var(--burgundy);
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  margin-top: 0.4rem;
+  height: 4px;
+  width: 60%;
+  background: var(--rose);
+  border-radius: 2px;
+}
+
+.section-title--light {
+  color: var(--cream);
+}
+
+.section-title--light::after {
+  background: var(--rose);
+}
+
+/* ══════════════════════════════
+   1. HERO
+══════════════════════════════ */
+.section--hero {
+  background: var(--cream);
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* hero-inner is just a flex row — sizing comes from section + section-inner */
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 4rem;     /* matches section-inner so hero aligns with other sections */
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-greeting {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--crimson);
+  margin-bottom: 0.5rem;
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  color: var(--burgundy);
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
+}
+
+.hero-tagline {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--forest);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.hero-bio {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a3a3a;
+  max-width: 580px;
+}
+
+/* Photo */
+.hero-photo-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-photo {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  border: 5px solid var(--cream);
+  box-shadow: 0 8px 40px rgba(98,6,7,0.2);
+}
+
+.hero-photo-ring {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 3px solid var(--rose);
+  opacity: 0.6;
+}
+
+/* Scroll hint */
+.scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--forest);
+  opacity: 0.5;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+/* ══════════════════════════════
+   2. INTERESTS
+══════════════════════════════ */
+.section--research {
+  background: var(--forest);
+}
+
+.section--research .section-title {
+  color: var(--cream);
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.research-card {
+  background: rgba(245, 249, 229, 0.07);
+  border: 1px solid rgba(245,249,229,0.12);
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.research-card:hover {
+  background: rgba(245,249,229,0.12);
+  transform: translateY(-4px);
+}
+
+.research-icon {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.research-card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--cream);
+  margin-bottom: 0.6rem;
+}
+
+.research-card-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(245,249,229,0.65);
+}
+
+/* ══════════════════════════════
+   3. SKILLS
+══════════════════════════════ */
+.section--skills {
+  background: var(--cream);
+}
+
+.skills-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+}
+
+.skills-group-title {
+  font-family: var(--font-body);
+  font-size: 1.85rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--crimson);
+  margin-bottom: 1.2rem;
+}
+
+.skills-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-pill {
+  display: inline-block;
+  padding: 0.5rem 1.4rem;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: transparent;
+  border: 2px solid var(--burgundy);
+  color: var(--burgundy);
+  letter-spacing: 0.3px;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  cursor: default;
+}
+
+.skill-pill:hover {
+  background: var(--burgundy);
+  color: var(--cream);
+  transform: translateY(-2px);
+}
+
+/* ══════════════════════════════
+   4. PERSONAL DETAILS
+══════════════════════════════ */
+.section--details {
+  background: var(--burgundy);
+}
+
+.details-card {
+  background: rgba(245,249,229,0.06);
+  border: 1px solid rgba(245,249,229,0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.details-row {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid rgba(245,249,229,0.08);
+  gap: 2rem;
+}
+
+.details-row:last-child {
+  border-bottom: none;
+}
+
+.details-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--rose);
+  min-width: 160px;
+}
+
+.details-value {
+  font-size: 1rem;
+  color: var(--cream);
+}
+
+.details-link {
+  color: var(--cream);
+  border-bottom: 1px solid rgba(225,145,132,0.4);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.details-link:hover {
+  color: var(--rose);
+  border-color: var(--rose);
+}
+
+/* Social Buttons */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--rose);
+  color: var(--burgundy);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.social-btn:hover {
+  background: var(--crimson);
+  color: var(--cream);
+  transform: translateY(-2px);
+}
+
+.social-btn--outline {
+  background: transparent;
+  border: 2px solid var(--rose);
+  color: var(--rose);
+}
+
+.social-btn--outline:hover {
+  background: var(--rose);
+  color: var(--burgundy);
+}
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 1600px) {
+  .section-inner,
+  .hero-inner {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1.25rem;
+  }
+
+  .section-inner {
+    padding: 0 1.25rem;
+  }
+
+  .hero-bio {
+    margin: 0 auto;
+  }
+
+  .hero-photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .section {
+    padding: 3rem 1.25rem;
+  }
+
+  .details-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .details-label {
+    min-width: auto;
+  }
+}
+
+
+/* ══════════════════════════════
+   LAPTOP / LARGE SCREENS
+══════════════════════════════ */
+@media (min-width: 1024px) {
+  body {
+    font-size: 24px; 
+  }
+
+  .section {
+    padding: 8rem 4rem; 
+  }
+
+  .section-inner,
+  .hero-inner {
+    max-width: 1800px; 
+    padding: 0 6rem;   
+  }
+
+  .hero-name {
+    font-size: clamp(4.5rem, 8vw, 6.5rem); 
+  }
+
+  .hero-tagline {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+  }
+
+  .hero-bio {
+    font-size: 2.2rem;
+    max-width: 700px; 
+  }
+
+  .hero-photo {
+    width: 400px;
+    height: 400px; 
+  }
+
+  .research-card-title {
+    font-size: 2.5rem; 
+  }
+
+  .research-card-desc {
+    font-size: 2.05rem;
+  }
+
+  .skill-pill {
+    font-size: 2.05rem;
+    padding: 0.6rem 1.6rem; 
+  }
+
+  .details-label {
+    font-size: 1.9rem;
+  }
+
+  .details-value {
+    font-size: 2.1rem;
+  }
+
+  .social-btn {
+    font-size: 2rem;
+    padding: 1rem 2.5rem; 
+  }
+}
