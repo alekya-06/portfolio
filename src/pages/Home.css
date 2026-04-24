@@ -238,7 +238,7 @@ body {
 
 .skills-group-title {
   font-family: var(--font-body);
-  font-size: 1.85rem;
+  font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 2.5px;
   text-transform: uppercase;
@@ -408,67 +408,66 @@ body {
   }
 }
 
-
 /* ══════════════════════════════
    LAPTOP / LARGE SCREENS
 ══════════════════════════════ */
 @media (min-width: 1024px) {
   body {
-    font-size: 24px; 
+    font-size: 18px; /* moderate bump, not 24px */
   }
 
   .section {
-    padding: 8rem 4rem; 
+    padding: 6rem 3rem; /* still roomy, but less extreme */
   }
 
   .section-inner,
   .hero-inner {
-    max-width: 1800px; 
-    padding: 0 6rem;   
+    max-width: 1600px;
+    padding: 0 5rem;
   }
 
   .hero-name {
-    font-size: clamp(4.5rem, 8vw, 6.5rem); 
+    font-size: clamp(3.5rem, 6vw, 5rem); /* smaller upper bound */
   }
 
   .hero-tagline {
-    font-size: 2.2rem;
-    letter-spacing: 3px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
   }
 
   .hero-bio {
-    font-size: 2.2rem;
-    max-width: 700px; 
+    font-size: 1.1rem;
+    max-width: 700px;
   }
 
   .hero-photo {
-    width: 400px;
-    height: 400px; 
+    width: 360px;
+    height: 360px;
   }
 
   .research-card-title {
-    font-size: 2.5rem; 
+    font-size: 1.4rem;
   }
 
   .research-card-desc {
-    font-size: 2.05rem;
+    font-size: 1rem;
   }
 
   .skill-pill {
-    font-size: 2.05rem;
-    padding: 0.6rem 1.6rem; 
+    font-size: 1rem;
+    padding: 0.6rem 1.4rem;
   }
 
   .details-label {
-    font-size: 1.9rem;
+    font-size: 0.9rem;
   }
 
   .details-value {
-    font-size: 2.1rem;
+    font-size: 1.1rem;
   }
 
   .social-btn {
-    font-size: 2rem;
-    padding: 1rem 2.5rem; 
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
   }
 }
